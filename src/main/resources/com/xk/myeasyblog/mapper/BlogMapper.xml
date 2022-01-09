@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xk.myeasyblog.mapper.BlogMapper">
+
+    <!-- 映射表字段与实体类属性 -->
+    <resultMap id="BaseResultMap" type="com.xk.myeasyblog.pojo.BlogEntity">
+        <id column="ID_BLOG" jdbcType="BIGINT" property="idBlog"/>
+        <id column="VLU_BLOG_TITLE" jdbcType="VARCHAR" property="vluBlogTitle"/>
+        <id column="ID_AUTHOR" jdbcType="BIGINT" property="idAuthor"/>
+        <id column="VLU_BLOG_CONTENT" jdbcType="VARCHAR" property="vluBlogContent"/>
+        <id column="TIME_CREATED" jdbcType="DATE" property="timeCreated"/>
+        <id column="TIME_MODIFIED" jdbcType="DATE" property="timeModified"/>
+        <id column="ID_USER_CREATED" jdbcType="VARCHAR" property="idUserCreated"/>
+        <id column="ID_USER_MODIFIED" jdbcType="VARCHAR" property="idUserModified"/>
+    </resultMap>
+
+    <select id="findBlogsByUserId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select * from blog
+        where ID_AUTHOR = #{idUser, jdbcType=VARCHAR}
+    </select>
+</mapper>
