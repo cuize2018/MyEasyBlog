@@ -8,7 +8,7 @@ public class BlogEntity extends BaseEntity {
 
     private Integer idAuthor;
 
-    private String vluBlogContent;
+    private String  vluBlogContent;
 
     public Integer getIdBlog() {
         return idBlog;
