@@ -7,8 +7,9 @@
 
     <!-- 映射表字段与实体类属性 -->
     <resultMap id="BaseResultMap" type="com.xk.myeasyblog.pojo.BlogEntity">
-        <id column="ID_BLOG" jdbcType="BIGINT" property="idBlog"/>
+        <id column="ID_BLOG" jdbcType="VARCHAR" property="idBlog"/>
         <id column="VLU_BLOG_TITLE" jdbcType="VARCHAR" property="vluBlogTitle"/>
+        <id column="VLU_TYPE" jdbcType="VARCHAR" property="vluType"/>
         <id column="ID_AUTHOR" jdbcType="BIGINT" property="idAuthor"/>
         <id column="VLU_BLOG_CONTENT" jdbcType="VARCHAR" property="vluBlogContent"/>
         <id column="TIME_CREATED" jdbcType="DATE" property="timeCreated"/>
@@ -18,7 +19,7 @@
     </resultMap>
 
     <select id="findBlogsByUserId" parameterType="java.lang.String" resultMap="BaseResultMap">
-        select * from blog
+        select * from BLOG
         where ID_AUTHOR = #{idUser, jdbcType=VARCHAR}
     </select>
 </mapper>

@@ -2,7 +2,7 @@ package com.xk.myeasyblog.pojo;
 
 public class BlogEntity extends BaseEntity {
 
-    private Integer idBlog;
+    private String idBlog;
 
     private String vluBlogTitle;
 
@@ -10,11 +10,13 @@ public class BlogEntity extends BaseEntity {
 
     private String  vluBlogContent;
 
-    public Integer getIdBlog() {
+    private String vluType;
+
+    public String getIdBlog() {
         return idBlog;
     }
 
-    public void setIdBlog(Integer idBlog) {
+    public void setIdBlog(String idBlog) {
         this.idBlog = idBlog;
     }
 
@@ -40,5 +42,13 @@ public class BlogEntity extends BaseEntity {
 
     public void setVluBlogContent(String vluBlogContent) {
         this.vluBlogContent = vluBlogContent;
+    }
+
+    public String getVluType() {
+        return vluType;
+    }
+
+    public void setVluType(String vluType) {
+        this.vluType = vluType;
     }
 }
